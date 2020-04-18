@@ -24,7 +24,8 @@ class RoomtempViewSet(ModelViewSet):
                 hum = int(request.data['humidity'])
                 new_room_temp = Roomtemp(temperature=tmp, humidity=hum)
                 new_room_temp.save()
-                return Response(new_room_temp, status=status.HTTP_201_CREATED)
+                serializer = RoomtempSerializer(new_room_temp, many=False)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             err_msg['error'] = 'Wrong request'
             return Response(err_msg, status=status.HTTP_400_BAD_REQUEST)
