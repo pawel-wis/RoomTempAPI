@@ -5,4 +5,4 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Roomtemp(models.Model):
     temperature = models.FloatField()
     humidity = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
-    created_at = models.DateTimeField(auto_date_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
