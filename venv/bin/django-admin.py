@@ -1,4 +1,4 @@
-#!c:\users\pawel\onedrive\desktop\rpiproj\roomtempapi\venv\scripts\python.exe
+#!/home/pi/RoomTempAPI/venv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
